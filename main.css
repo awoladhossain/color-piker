@@ -1,0 +1,275 @@
+body {
+    font-family: sans-serif;
+    color: #9B9B9B;
+    background-color: #20e063;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body::after {
+    background: #20e063;
+    z-index: 1;
+}
+
+.nullBackground {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background: url(checkerboard.jpg);
+    background-repeat: repeat;
+    background-size: contain; */
+}
+
+::selection {
+    background-color: green;
+}
+
+.container {
+    position: absolute;
+    width: 835px;
+    background: white;
+    border-radius: 24px;
+    top: 50%;
+    padding: 40px 50px 11px;
+    transform: translateY(-50%);
+    display: flex;
+    -webkit-box-shadow: 0px 20px 41px 0px rgba(0,0,0,0.25);
+-moz-box-shadow: 0px 7px 41px 0px rgba(0,0,0,0.25);
+box-shadow: 0px 7px 41px 0px rgba(0,0,0,0.25);
+}
+
+.chami {
+    position: fixed;
+    width: 100px;
+    top: -77px;
+    left: -30px;
+}
+
+.eyeSockets {
+    position: absolute;
+    width: 50px;
+    height: 27px;
+    margin: 30px 0 0 60px;
+    /* background-color: red; */
+}
+
+.eye {
+    position: absolute;
+    display: inline-block;
+    width: 50%;
+    height: 100%;
+    /* background-color: gray; */
+}
+
+.eye#right {
+    left: 50%;
+}
+
+.pupil {
+    position: absolute;
+    height: 14px;
+    width: 14px;
+    border-radius: 50%;
+    background-color: white;
+    transition: transform 0.1s, height 0.06s;
+}
+
+.eyes {
+    position: absolute;
+    width: 40px;
+    bottom: 0;
+    right: 0;
+}
+
+.chami path {
+    fill: #dbe020;
+    stroke: #9BCB6B;
+}
+
+.chami path {
+    transition: fill 1s;
+}
+
+h1 {
+    margin: 0;
+}
+
+h2, h3 {
+    font-size: 14px;
+    font-weight: normal;
+    margin: 0;
+}
+
+.input h3 {
+    margin-top: 16px; 
+}
+
+.input {
+    display: inline-block;
+    margin: 0 0 29px;
+    width: 50%;
+}
+
+input[type="text"]:focus {
+    /* border-radius: 50px; */
+    outline: none;
+    border-color: darkgray;
+}
+
+.hexTextInput {
+    width: 120px;
+    transition: border-color 0s;
+    animation-duration: 0.6s;
+}
+
+@keyframes correct {
+    0% {border-color: #20e063}
+    40% {transform: translateY(4px);border-color: #20e063}
+    100% {transform: translateY(0px);border-color: black}
+}
+
+@keyframes shake {
+    0% {border-color: red; transform: translateX(0px);}
+    20% {transform: translateX(-4px);}
+    40% {border-color: red; transform: translateX(4px);}
+    60% {transform: translateX(-4px);}
+    80% {transform: translateX(4px);}
+    top {transform: translateX(0px);}
+}
+
+.alphaTextInput {
+    width: 60px;
+}
+
+input[type="text"] {
+    display: block;
+    margin: 6px 0;
+    padding: 10px 20px;
+    font-size: 14px;
+    color: black;
+    border: 3px #D8D8D8 solid;
+    border-radius: 50px;
+}
+
+.output {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    width: 80%;
+}
+
+.result {
+    width: 5em;
+    height: 5em;
+    border-radius: 50%;
+    box-shadow: 0 2px 6px #000;
+    background: #956453;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 2em;
+}
+
+.output {
+    padding: 0 1em;
+}
+
+.outputCell {
+    display: table-row;
+    background-color: #D8D8D8;
+    margin-bottom: 32px;
+    padding: 32px 32px 16px;
+    border-radius: 24px;
+    border: 0px green solid;
+    border-color: red;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    transition: background-color 1s ease-in-out;
+}
+
+.outputCell:hover {
+    border-width: 3px;
+    border-color: orange;
+    margin: -3px -3px 29px -3px ; 
+    cursor: copy;
+}
+
+.outputCell:active {
+    background-color: green;
+    margin: -3px -3px 29px -3px ; 
+    border: 3px lightgreen solid;
+    transition: background-color 0.1s ease-in-out;
+}
+
+.outputCell:hover svg {
+    fill: #9B9B9B;
+}
+
+.outputCell:active svg {
+    fill: black;
+}
+
+.toolTip {
+    position: absolute;
+    width: 200px;
+    z-index: -1;
+}
+
+.toolTip h5 {
+    position: absolute;
+    top: -50px;
+    transition: top 0.14s ease-in-out;
+}
+
+.outputCell:hover h5 {
+    top: -74px;
+}
+
+.output h3, output svg {
+    /* flex-basis: min-content; */
+    /* align-self: top; */
+}
+
+.output h3 {
+    font-weight: bold;
+    color: white;
+}
+
+.output p {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+    width: 100%;
+}
+
+.output svg {
+    height: 24px;
+    right: 0;
+    fill: white;
+}
+
+.sp-container {
+    margin-top: 12px;
+    background: none;
+    border: none;
+}
+
+.sp-picker-container {
+    width: 240px;
+    padding-left: 0;
+    border: none;
+}
+
+.sp-color, .sp-hue {
+    border: none;
+}
+
+.sp-alpha-inner {
+    border: none;
+}
